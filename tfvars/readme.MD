@@ -17,7 +17,7 @@ This Terraform project manages EC2 infrastructure across two environments — de
 
 📁 Project Structure
 
-tf-vars/
+`tf-vars/
 │
 ├── ec2.tf               # EC2 resource definition
 ├── provider.tf          # AWS provider + S3 backend block (not filled here)
@@ -30,7 +30,7 @@ tf-vars/
 └── dev/
     ├── backend.tf       # S3 backend config for dev environment
     ├── dev.tfvars       # Overrides for dev (e.g., env = "dev")
-
+`
 
 **⚙️ What This Setup Does**
 
