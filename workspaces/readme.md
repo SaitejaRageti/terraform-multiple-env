@@ -1,13 +1,14 @@
-🌐 Environment Management with Terraform Workspaces
+# 🌐 Environment Management with Terraform Workspaces
+
+
 To manage infrastructure across different environments (dev, prod), Terraform workspaces were used in combination with remote state storage on Amazon S3.
 
 🛠️ Setup Details
 📁 Remote Backend Configuration (S3)
+
 In provider.tf, remote backend was configured as follows:
 
-hcl
-Copy
-Edit
+
 terraform {
   backend "s3" {
     bucket = "your-terraform-state-bucket"
@@ -17,6 +18,8 @@ terraform {
     encrypt        = true
   }
 }
+
+
 💡 Note: The actual workspace name is automatically appended to the key by Terraform when using workspaces. For example, with the key set to ec2/statefile.tfstate:
 
 Dev workspace → key/env/dev/terraform.tfstate
