@@ -20,6 +20,7 @@ terraform {
 }
 
 
+
 💡 Note: The actual workspace name is automatically appended to the key by Terraform when using workspaces. For example, with the key set to ec2/statefile.tfstate:
 
 Dev workspace → key/env/dev/terraform.tfstate
@@ -29,8 +30,11 @@ Prod workspace → key/env/prod/terraform.tfstate
 Terraform automatically handles storing the state file in a subdirectory structure like:
 
 
+
 s3://your-terraform-state-bucket/key/env/dev/terraform.tfstate
+
 s3://your-terraform-state-bucket/key/env/prod/terraform.tfstat
+
 
 
 🔁 Workspace Commands Used
