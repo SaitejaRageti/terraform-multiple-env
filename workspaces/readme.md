@@ -37,32 +37,35 @@ s3://your-terraform-state-bucket/key/env/prod/terraform.tfstat
 
 
 
-🔁 Workspace Commands Used
+**🔁 Workspace Commands Used**
 
 
 terraform workspace new dev 
+
 terraform workspace new prod
 
 terraform workspace select dev   # switch to dev
+
 terraform apply                  # deploy to dev
 
 terraform workspace select prod  # switch to prod
+
 terraform apply                  # deploy to prod
 
 
 Each workspace maintains an isolated state file, allowing you to create resources with the same configuration but in different environments.
 
-✅ Pros and ❌ Cons of Using Terraform Workspaces
+**✅ Pros and ❌ Cons of Using Terraform Workspaces**
 
 
-✅ Pros
+**✅ Pros**
 Environment Isolation: Each workspace has a separate state file, reducing the risk of cross-environment changes.
 
 Code Reuse: Use the same Terraform configuration to deploy infrastructure to multiple environments.
 
 Simplified State Management: Automatically handles directory structure for storing state in remote backends like S3.
 
-❌ Cons
+**❌ Cons**
 Limited Flexibility for Complex Environments: Workspaces are not ideal for managing entirely different infrastructure across environments (e.g., different VPCs, regions).
 
 Hidden Workspace Context: It’s easy to forget which workspace you're in — mistakes can happen if you're not careful.
