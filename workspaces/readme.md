@@ -40,9 +40,9 @@ s3://your-terraform-state-bucket/key/env/prod/terraform.tfstat
 **🔁 Workspace Commands Used**
 
 
-terraform workspace new dev 
+terraform workspace new dev    ## creates dev workspace
 
-terraform workspace new prod
+terraform workspace new prod   ## creates prod workspace
 
 terraform workspace select dev   # switch to dev
 
@@ -51,6 +51,10 @@ terraform apply                  # deploy to dev
 terraform workspace select prod  # switch to prod
 
 terraform apply                  # deploy to prod
+
+terraform workspace show          ## will show available workspaces
+
+
 
 
 Each workspace maintains an isolated state file, allowing you to create resources with the same configuration but in different environments.
