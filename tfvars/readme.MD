@@ -35,11 +35,11 @@ This Terraform project manages EC2 infrastructure across two environments — de
 **⚙️ What This Setup Does**
 
 
-Separates infrastructure for dev and prod using distinct:
+- Separates infrastructure for dev and prod using distinct:
 
-Remote state backends (each has its own S3 bucket)
+- Remote state backends (each has its own S3 bucket)
 
-Variable override files (*.tfvars)
+- Variable override files (*.tfvars)
 
 Uses one common set of .tf files to manage EC2 resources.
 
@@ -49,29 +49,29 @@ Avoids the use of Terraform workspaces, instead relying on file/folder separatio
 
 🟢 Initialize for dev environment:
 
-terraform init -backend-config=dev/backend.tf -reconfigure
+- terraform init -backend-config=dev/backend.tf -reconfigure
 
-terraform plan   -var-file=dev/dev.tfvars
+- terraform plan   -var-file=dev/dev.tfvars
 
-terraform apply  -var-file=dev/dev.tfvars -auto-approve
+- terraform apply  -var-file=dev/dev.tfvars -auto-approve
 
 🔴 Destroy dev resources:
 
 
-terraform destroy -var-file=dev/dev.tfvars -auto-approve
+- terraform destroy -var-file=dev/dev.tfvars -auto-approve
 
 🟢 Initialize for prod environment:
 
-terraform init -backend-config=prod/backend.tf -reconfigure
+- terraform init -backend-config=prod/backend.tf -reconfigure
 
-terraform plan   -var-file=prod/prod.tfvars
+- terraform plan   -var-file=prod/prod.tfvars
 
-terraform apply  -var-file=prod/prod.tfvars -auto-approve
+- terraform apply  -var-file=prod/prod.tfvars -auto-approve
 
 🔴 Destroy prod resources:
 
 
-terraform destroy -var-file=prod/prod.tfvars -auto-approve
+- terraform destroy -var-file=prod/prod.tfvars -auto-approve
 
 
 🔁 Use -reconfigure during terraform init to reinitialize the backend when switching environments.(Note)
